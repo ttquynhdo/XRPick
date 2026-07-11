@@ -16,9 +16,9 @@ public class PackageInfoDisplay : MonoBehaviour
 
     public void ShowDefaultInfo()
     {
-        headerText.text = "Package Information";
-        titleText.text = "There are two package types used in warehouse picking.";
-        descriptionText.text = "Touch or grab a package to learn what it means in the order picking process.";
+        headerText.text = "Instruction Panel";
+        titleText.text = "";
+        descriptionText.text = "";
         ruleText.text = "";
     }
 
@@ -38,17 +38,4 @@ public class PackageInfoDisplay : MonoBehaviour
         ruleText.text = "Rule: VPE packages CAN be opened when needed.";
     }
 
-    public void ShowPackageInfo(PackageData packageData)
-    {
-        if (packageData == null)
-        {
-            ShowDefaultInfo();
-            return;
-        }
-
-        headerText.text = "Package Type";
-        titleText.text = packageData.packageType.ToString();
-        descriptionText.text = packageData.description;
-        ruleText.text = packageData.rule;
-    }
 }
