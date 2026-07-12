@@ -9989,24 +9989,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-----------------------------------------------------------
-
-
-    MATERIAL:
-    Cable Connector A (536276)
-
-
-    PACKAGE TYPE: GG
-
-
-    ORDER QUANTITY: 100 pcs
-
-
-    PACKAGE
-    SIZE: 50 pcs / package
-
-
-    -----------------------------------------------------------'
+  m_text: "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\n1.
+    CABLE CONNECTOR A\n\nOrder quantity     100 pcs\nPackage type       GG\nPackage
+    size       50 pcs / package\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
