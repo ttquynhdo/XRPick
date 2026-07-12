@@ -17,7 +17,7 @@ public class PackageInfoDisplay : MonoBehaviour
     public void ShowDefaultInfo()
     {
         headerText.text = "Instruction Panel";
-        titleText.text = "";
+        titleText.text = "Grab each package to learn its type.";
         descriptionText.text = "";
         ruleText.text = "";
     }
