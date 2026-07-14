@@ -29,6 +29,7 @@ TagManager:
   - Package
   - GGPackage
   - VPEPackage
+  - LooseItem
   layers:
   - Default
   - TransparentFX

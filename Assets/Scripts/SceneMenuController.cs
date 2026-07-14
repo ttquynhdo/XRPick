@@ -35,12 +35,12 @@ public class SceneMenuController : MonoBehaviour
         SceneManager.LoadScene("MixedPickingScene");
     }
 
-    public void OpenWeighing(bool isOn)
+    public void OpenComplex(bool isOn)
     {
         if (!isOn)
             return;
 
-        SceneManager.LoadScene("WeighingScene");
+        SceneManager.LoadScene("ComplexScene");
     }
 
     public void ExitTraining(bool isOn)
