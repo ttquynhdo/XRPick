@@ -50,14 +50,6 @@ public class PackageInfoDisplay : MonoBehaviour
     [SerializeField] private TMP_Text descriptionText;
     [SerializeField] private TMP_Text ruleText;
 
-    [Header("Default Content")]
-    [SerializeField] private string defaultTitle = "Package Information";
-    [SerializeField]
-    private string defaultDescription =
-        "Look below to read the instructions on the table.\n" +
-        "When you complete the task, select the next scenario option in the Menu.";
-    [SerializeField] private string defaultRule = "";
-
     private void Start()
     {
         ShowDefaultInfo();
@@ -75,8 +67,9 @@ public class PackageInfoDisplay : MonoBehaviour
 
     public void ShowDefaultInfo()
     {
-        titleText.text = defaultTitle;
-        descriptionText.text = defaultDescription;
-        ruleText.text = defaultRule;
+        titleText.text = "";
+        descriptionText.text = "Look below to read the instructions on the table.\n" +
+        "When you complete the task, select the next scenario option in the Menu.";
+        ruleText.text = "";
     }
 }

@@ -1,3 +1,50 @@
+//using UnityEngine;
+//using UnityEngine.SceneManagement;
+
+//public class SceneMenuController : MonoBehaviour
+//{
+//    public void OpenWelcome(bool isOn)
+//    {
+//        if (!isOn)
+//            return;
+
+//        SceneManager.LoadScene("WelcomeScene");
+//    }
+
+//    public void OpenConcept(bool isOn)
+//    {
+//        if (!isOn)
+//            return;
+
+//        SceneManager.LoadScene("ConceptScene");
+//    }
+
+//    public void OpenBasicPicking(bool isOn)
+//    {
+//        if (!isOn)
+//            return;
+
+//        SceneManager.LoadScene("BasicPickingScene");
+//    }
+
+//    public void OpenMixedPicking(bool isOn)
+//    {
+//        if (!isOn)
+//            return;
+
+//        SceneManager.LoadScene("MixedPickingScene");
+//    }
+
+//    public void OpenComplex(bool isOn)
+//    {
+//        if (!isOn)
+//            return;
+
+//        SceneManager.LoadScene("ComplexScene");
+//    }
+
+//}
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +55,7 @@ public class SceneMenuController : MonoBehaviour
         if (!isOn)
             return;
 
-        SceneManager.LoadScene("WelcomeScene");
+        LoadSceneIfDifferent("WelcomeScene");
     }
 
     public void OpenConcept(bool isOn)
@@ -16,7 +63,7 @@ public class SceneMenuController : MonoBehaviour
         if (!isOn)
             return;
 
-        SceneManager.LoadScene("ConceptScene");
+        LoadSceneIfDifferent("ConceptScene");
     }
 
     public void OpenBasicPicking(bool isOn)
@@ -24,7 +71,7 @@ public class SceneMenuController : MonoBehaviour
         if (!isOn)
             return;
 
-        SceneManager.LoadScene("BasicPickingScene");
+        LoadSceneIfDifferent("BasicPickingScene");
     }
 
     public void OpenMixedPicking(bool isOn)
@@ -32,7 +79,7 @@ public class SceneMenuController : MonoBehaviour
         if (!isOn)
             return;
 
-        SceneManager.LoadScene("MixedPickingScene");
+        LoadSceneIfDifferent("MixedPickingScene");
     }
 
     public void OpenComplex(bool isOn)
@@ -40,16 +87,16 @@ public class SceneMenuController : MonoBehaviour
         if (!isOn)
             return;
 
-        SceneManager.LoadScene("ComplexScene");
+        LoadSceneIfDifferent("ComplexScene");
     }
 
-    public void ExitTraining(bool isOn)
+    private void LoadSceneIfDifferent(string sceneName)
     {
-        if (!isOn)
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == sceneName)
             return;
 
-        Debug.Log("Exit training");
-
-        Application.Quit();
+        SceneManager.LoadScene(sceneName);
     }
 }

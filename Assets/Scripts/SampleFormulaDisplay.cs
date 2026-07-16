@@ -6,7 +6,7 @@ public class SampleFormulaDisplay : MonoBehaviour
     [SerializeField] private TMP_Text formulaContentText;
 
     private const string DefaultContent =
-        "Grab a package to view an example.";
+        "";
 
     private void Start()
     {

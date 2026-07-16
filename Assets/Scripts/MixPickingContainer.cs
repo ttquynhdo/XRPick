@@ -1,20 +1,22 @@
 using System.Collections.Generic;
+using System.Xml.Schema;
 using TMPro;
 using UnityEngine;
 
 public class MixedPickingContainer : MonoBehaviour
 {
     [Header("Required quantities")]
-    [SerializeField] private int requiredGG = 2;
-    [SerializeField] private int requiredVPE = 2;
+    [SerializeField] private int requiredGGA = 2;
+    [SerializeField] private int requiredGGB = 2;
+    [SerializeField] private int requiredVPE = 0;
 
     [Header("WMS texts")]
-    [SerializeField] private TMP_Text ggCountText;
-    [SerializeField] private TMP_Text vpeCountText;
+    [SerializeField] private TMP_Text packageCountText;
 
     private readonly HashSet<PackageData> packagesInside = new();
 
-    public int GGCount { get; private set; }
+    public int GGACount { get; private set; }
+    public int GGBCount { get; private set; }
     public int VPECount { get; private set; }
 
     private void Start()
@@ -55,20 +57,25 @@ public class MixedPickingContainer : MonoBehaviour
 
     private bool IsCountablePackage(PackageType type)
     {
-        return type == PackageType.GG ||
+        return type == PackageType.GGA || type == PackageType.GGB ||
                type == PackageType.VPEFull;
     }
 
     private void UpdateCounts()
     {
-        GGCount = 0;
+        GGACount = 0;
+        GGBCount = 0;
         VPECount = 0;
 
         foreach (PackageData package in packagesInside)
         {
-            if (package.packageType == PackageType.GG)
+            if (package.packageType == PackageType.GGA)
             {
-                GGCount++;
+                GGACount++;
+            }
+            else if (package.packageType == PackageType.GGB)
+            {
+                GGBCount++;
             }
             else if (package.packageType == PackageType.VPEFull)
             {
@@ -76,22 +83,16 @@ public class MixedPickingContainer : MonoBehaviour
             }
         }
 
-        if (ggCountText != null)
+        if (packageCountText != null)
         {
-            ggCountText.text =
-                $"GG PLACED: {GGCount}";
-        }
-
-        if (vpeCountText != null)
-        {
-            vpeCountText.text =
-                $"VPE PLACED: {VPECount}";
+            packageCountText.text =
+                $"PACKAGE PLACED: {GGACount + GGBCount + VPECount}";
         }
     }
 
     public bool IsOrderCorrect()
     {
-        return GGCount == requiredGG &&
+        return GGACount == requiredGGA && GGBCount == requiredGGB &&
                VPECount == requiredVPE;
     }
 }

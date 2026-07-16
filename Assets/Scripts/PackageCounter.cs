@@ -10,6 +10,7 @@ public class PackageCounter : MonoBehaviour
     [Header("WMS UI")]
     [SerializeField] private TMP_Text packagePlacedText;
     [SerializeField] private TMP_Text orderFeedbackText;
+    [SerializeField] private TMP_Text instructionText;
 
     // Mỗi package chỉ xuất hiện một lần trong HashSet.
     private readonly HashSet<GameObject> ggPackagesInside = new();
@@ -111,9 +112,12 @@ public class PackageCounter : MonoBehaviour
         if (ggCount == requiredGGCount && vpeCount == 0)
         {
             orderFeedbackText.text =
-                "Correct! You selected 2 GG packages.";
+                "Correct! You selected 2 GG packages.\n\n";
 
             orderFeedbackText.color = Color.green;
+
+            instructionText.text = "You have successfully completed the task.\n" +
+            "Select the next scenario option in the MENU.";
         }
         else if (vpeCount > 0)
         {
