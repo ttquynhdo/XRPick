@@ -39,7 +39,7 @@ public class PiecesOrderValidator : MonoBehaviour
             feedbackText.text =
                     $"Correct!\n" +
                      $"{GGBCount} packages and "+
-                    $"{totalPieces} pieces have been placed.\n";
+                    $"{looseItemCount} pieces have been placed.\n";
 
             feedbackText.color = Color.green;
             congratulationsPanel.SetActive(true);
